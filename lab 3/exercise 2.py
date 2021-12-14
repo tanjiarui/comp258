@@ -10,7 +10,7 @@ batch_size = 64
 input_shape = (image_width, image_height, 3)
 early_stopping = EarlyStopping(monitor='val_loss', patience=2)
 tensorboard = TensorBoard()
-# load data
+# load data. download dataset in https://centennialcollegeedu-my.sharepoint.com/:u:/g/personal/jtan73_my_centennialcollege_ca/EURYk12qubVEi936zWSnEMQBnLyGsNTbqN4nBOeBmNG1hA?e=hO0E9s
 data = ImageDataGenerator(rescale=1./255)
 train_generator = data.flow_from_directory('dataset/train', target_size=(image_width, image_height), shuffle=True, batch_size=batch_size)
 validation_generator = data.flow_from_directory('dataset/validation', target_size=(image_width, image_height), shuffle=True, batch_size=batch_size)
