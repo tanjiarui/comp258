@@ -32,7 +32,7 @@ international_postal = ['390', '682', '400', '143', '010']  # overseas zip codes
 data['MAILING POSTAL CODE GROUP 3'].replace(international_postal, 'overseas', inplace=True)
 data['failure'].replace(['In Progress', 'Successful', 'Unsuccessful'], [0, 0, 1], inplace=True)  # take 'in progress' and 'successful' as not failed
 data.loc[data[data['high school indicator'] == 0].index, 'HS AVERAGE MARKS'] = 0  # no mark for those who didn't attend high school
-categorical_column = [col for col in data.columns if data[col].dtype == 'object'] + ['PRIMARY PROGRAM CODE', 'INTAKE TERM CODE', 'ADMIT TERM CODE', 'EXPECTED GRAD TERM CODE']
+categorical_column = [col for col in data.columns if data[col].dtype == 'object']
 label_encoders = dict()
 for column in categorical_column:
 	encoder = preprocessing.LabelEncoder()

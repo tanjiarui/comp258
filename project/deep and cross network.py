@@ -37,6 +37,8 @@ predict = model.predict(x_test)
 predict = [np.argmax(one_hot) for one_hot in predict]
 print(classification_report(y_test, predict))
 model.save('deep and cross network')
+
+
 '''
 				precision   recall    f1-score    support
 			0.0     0.89    0.90        0.89        79
